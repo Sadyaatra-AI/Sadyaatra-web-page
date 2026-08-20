@@ -11,7 +11,7 @@ const SLIDES = [
     { type: 'image', src: '/hero-3.png' },
 ];
 
-const SLIDE_DURATION = 4000;
+const IMAGE_DURATION = 2000;
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -20,12 +20,36 @@ export default function Hero() {
 
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % SLIDES.length);
-        }, SLIDE_DURATION);
+        const video = videoRef.current;
 
-        return () => clearInterval(timer);
-    }, []);
+
+        if (SLIDES[current].type === 'video') {
+            if (!video) return;
+
+
+            video.currentTime = 0;
+            video.play().catch(() => { });
+
+            const handleEnded = () => {
+                setCurrent((prev) => (prev + 1) % SLIDES.length);
+            };
+
+            video.addEventListener('ended', handleEnded);
+
+            return () => {
+                video.removeEventListener('ended', handleEnded);
+            };
+        }
+
+
+        else {
+            const timer = setTimeout(() => {
+                setCurrent((prev) => (prev + 1) % SLIDES.length);
+            }, IMAGE_DURATION);
+
+            return () => clearTimeout(timer);
+        }
+    }, [current]);
 
 
     const toggleVideo = () => {
@@ -42,19 +66,10 @@ export default function Hero() {
     };
 
 
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
 
-        if (SLIDES[current].type === 'video' && isPlaying) {
-            video.play().catch(() => { });
-        } else {
-            video.pause();
-        }
-    }, [current, isPlaying]);
 
     return (
-        <section className="relative h-screen min-h-[640px] overflow-hidden">
+        <section className="relative h-screen min-h-[640px] overflow-hidden" style={{ isolation: 'isolate' }}>
             {/* Background slides */}
             {SLIDES.map((slide, index) => (
                 <div
@@ -70,7 +85,6 @@ export default function Hero() {
                             poster={slide.poster}
                             autoPlay
                             muted
-                            loop
                             playsInline
                         />
                     ) : (
@@ -85,6 +99,9 @@ export default function Hero() {
 
             {/* Readability overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#2b2728]/85 via-[#2b2728]/45 to-[#2b2728]/10" />
+
+            {/* Bottom fade into Features section */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-t from-[#2b2728] via-[#2b2728]/60 to-transparent" />
 
             {/* Content */}
             <div className="relative z-20 flex h-full flex-col justify-center px-[6vw]">
