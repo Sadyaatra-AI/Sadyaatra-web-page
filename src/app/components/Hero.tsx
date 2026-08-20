@@ -11,7 +11,7 @@ const SLIDES = [
     { type: 'image', src: '/hero-3.png' },
 ];
 
-const SLIDE_DURATION = 6000;
+const SLIDE_DURATION = 4000;
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
