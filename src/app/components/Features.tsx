@@ -1,43 +1,27 @@
-﻿'use client';
-import { motion, Variants } from "framer-motion";
+'use client';
 
-const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.15,
-            duration: 0.6,
-            ease: "easeOut",
-        },
-    }),
-};
+import { motion } from 'framer-motion';
 
 const FEATURES = [
     {
-        type: 'image',
         src: '/feature-1.png',
         title: 'Explore Section',
         description:
-            'Browse each destination and view them in 360\u00b0 immersive mode before actually visiting the place',
+            'Browse each destination and view them in 360° immersive mode before actually visiting the place',
     },
     {
-        type: 'image',
         src: '/feature-2.png',
         title: 'Planning Section',
         description:
             'AI powered platform mastered in generating the detailed day-wise itinerary according to user preferences and budget',
     },
     {
-        type: 'image',
         src: '/feature-3.png',
         title: 'Community Section',
         description:
             'Share your travel experiences, tips, and recommendations with the Sadyaatra community',
     },
     {
-        type: 'image',
         src: '/feature-4.png',
         title: 'Travel agencies marketplace',
         description:
@@ -45,36 +29,49 @@ const FEATURES = [
     },
 ];
 
+// Real fade-in-on-scroll wrapper using Framer Motion
+function FadeIn({
+    children,
+    className,
+    delay = 0,
+}: {
+    children: React.ReactNode;
+    className?: string;
+    delay?: number;
+}) {
+    return (
+        <motion.div
+            className={className}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+        >
+            {children}
+        </motion.div>
+    );
+}
+
 export default function Features() {
     return (
         <section className="relative bg-[#2b2728] py-24 px-[6vw]">
 
             {/* Title */}
-            <motion.div
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                viewport={{ once: true, margin: '-100px' }}
-                className="mx-auto mb-16 max-w-2xl text-center"
-            >
+            <FadeIn className="mx-auto mb-16 max-w-2xl text-center">
                 <p className="mb-4 font-serif text-2xl italic text-[#9eb094] md:text-3xl">
                     Why Sadyaatra
                 </p>
                 <h2 className="font-serif text-2xl font-medium leading-snug text-white md:text-3xl">
                     Efforts is ours, experience is yours
                 </h2>
-            </motion.div>
+            </FadeIn>
 
             {/* Bento Grid */}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:grid-rows-2">
 
                 {/* Card 1 - Tall left card */}
-                <motion.div
-                    custom={0}
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
+                <FadeIn
+                    delay={0}
                     className="group relative overflow-hidden rounded-2xl bg-[#353030] md:row-span-2"
                 >
                     <img
@@ -91,15 +88,11 @@ export default function Features() {
                             {FEATURES[0].description}
                         </p>
                     </div>
-                </motion.div>
+                </FadeIn>
 
                 {/* Card 2 */}
-                <motion.div
-                    custom={1}
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
+                <FadeIn
+                    delay={0.15}
                     className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#353030] p-6"
                 >
                     <img
@@ -115,15 +108,11 @@ export default function Features() {
                             {FEATURES[1].description}
                         </p>
                     </div>
-                </motion.div>
+                </FadeIn>
 
                 {/* Card 3 */}
-                <motion.div
-                    custom={2}
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
+                <FadeIn
+                    delay={0.3}
                     className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#353030] p-6"
                 >
                     <img
@@ -139,15 +128,11 @@ export default function Features() {
                             {FEATURES[2].description}
                         </p>
                     </div>
-                </motion.div>
+                </FadeIn>
 
                 {/* Card 4 - Wide bottom card */}
-                <motion.div
-                    custom={3}
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
+                <FadeIn
+                    delay={0.45}
                     className="flex flex-col overflow-hidden rounded-2xl bg-[#353030] md:col-span-2 md:flex-row"
                 >
                     <img
@@ -163,7 +148,7 @@ export default function Features() {
                             {FEATURES[3].description}
                         </p>
                     </div>
-                </motion.div>
+                </FadeIn>
 
             </div>
         </section>
