@@ -107,13 +107,13 @@ export default function Hero() {
             <div className="relative z-20 flex h-full flex-col justify-center px-[6vw]">
                 <div className="max-w-xl">
                     <p className="mb-3 font-serif text-xl italic text-[#9eb094]">
-                        Journeys that stay
+                        Travel , made effortless
                     </p>
 
                     <h1 className="font-serif text-5xl font-semibold leading-[1.05] text-white">
-                        Go Slow.
+                        Leave the olaning
                         <br />
-                        Arrive Whole.
+                        live the journey
                     </h1>
 
                     <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#d6cfcc]">

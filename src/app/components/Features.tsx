@@ -54,11 +54,11 @@ function FadeIn({
 
 export default function Features() {
     return (
-        <section className="relative bg-[#2b2728] py-24 px-[6vw]">
+        <section className="relative overflow-hidden bg-[#2B2728] px-[6vw] py-24">
 
             {/* Title */}
             <FadeIn className="mx-auto mb-16 max-w-2xl text-center">
-                <p className="mb-4 font-serif text-2xl italic text-[#9eb094] md:text-3xl">
+                <p className="mb-4 font-serif text-2xl italic text-[#8C956A] md:text-3xl">
                     Why Sadyaatra
                 </p>
                 <h2 className="font-serif text-2xl font-medium leading-snug text-white md:text-3xl">
@@ -72,7 +72,7 @@ export default function Features() {
                 {/* Card 1 - Tall left card */}
                 <FadeIn
                     delay={0}
-                    className="group relative overflow-hidden rounded-2xl bg-[#353030] md:row-span-2"
+                    className="group relative overflow-hidden rounded-2xl bg-[#C6CAB2] md:row-span-2"
                 >
                     <img
                         src={FEATURES[0].src}
@@ -84,7 +84,7 @@ export default function Features() {
                         <h3 className="font-serif text-2xl text-white">
                             {FEATURES[0].title}
                         </h3>
-                        <p className="mt-2 max-w-xs text-sm leading-relaxed text-[#ded7cb]">
+                        <p className="mt-2 max-w-xs text-sm leading-relaxed text-[#2B2728]">
                             {FEATURES[0].description}
                         </p>
                     </div>
@@ -93,7 +93,7 @@ export default function Features() {
                 {/* Card 2 */}
                 <FadeIn
                     delay={0.15}
-                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#353030] p-6"
+                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#C6CAB2] p-6"
                 >
                     <img
                         src={FEATURES[1].src}
@@ -104,7 +104,7 @@ export default function Features() {
                         <h3 className="font-serif text-xl text-white">
                             {FEATURES[1].title}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-[#ded7cb]">
+                        <p className="mt-2 text-sm leading-relaxed text-[#2B2728]">
                             {FEATURES[1].description}
                         </p>
                     </div>
@@ -113,7 +113,7 @@ export default function Features() {
                 {/* Card 3 */}
                 <FadeIn
                     delay={0.3}
-                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#353030] p-6"
+                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#C6CAB2] p-6"
                 >
                     <img
                         src={FEATURES[2].src}
@@ -124,7 +124,7 @@ export default function Features() {
                         <h3 className="font-serif text-xl text-white">
                             {FEATURES[2].title}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-[#ded7cb]">
+                        <p className="mt-2 text-sm leading-relaxed text-[#2B2728]">
                             {FEATURES[2].description}
                         </p>
                     </div>
@@ -133,7 +133,7 @@ export default function Features() {
                 {/* Card 4 - Wide bottom card */}
                 <FadeIn
                     delay={0.45}
-                    className="flex flex-col overflow-hidden rounded-2xl bg-[#353030] md:col-span-2 md:flex-row"
+                    className="flex flex-col overflow-hidden rounded-2xl bg-[#C6CAB2] md:col-span-2 md:flex-row"
                 >
                     <img
                         src={FEATURES[3].src}
@@ -144,13 +144,14 @@ export default function Features() {
                         <h3 className="font-serif text-xl text-white md:text-2xl">
                             {FEATURES[3].title}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-[#ded7cb]">
+                        <p className="mt-3 text-sm leading-relaxed text-[#2B2728]">
                             {FEATURES[3].description}
                         </p>
                     </div>
                 </FadeIn>
 
             </div>
+
         </section>
     );
 }
