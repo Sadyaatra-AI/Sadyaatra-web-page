@@ -111,7 +111,7 @@ export default function Hero() {
                     </p>
 
                     <h1 className="font-serif text-5xl font-semibold leading-[1.05] text-white">
-                        Leave the olaning
+                        Leave the planing
                         <br />
                         live the journey
                     </h1>
