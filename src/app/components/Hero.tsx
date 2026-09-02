@@ -123,7 +123,7 @@ export default function Hero() {
 
                     <div className="mt-8 flex items-center gap-5">
                         <Link
-                            href="/destinations"
+                            href="#"
                             className="rounded-sm bg-[#8c956a] px-7 py-4 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-[#7a8259]"
                         >
                             Explore Destinations

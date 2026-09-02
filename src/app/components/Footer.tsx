@@ -6,24 +6,24 @@ import { useState, FormEvent } from 'react';
 import { FaInstagram, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
 
 const exploreLinks = [
-  { label: 'Destinations', href: '/destinations' },
-  { label: 'Experiences', href: '/experiences' },
-  { label: 'Deals', href: '/deals' },
-  { label: 'Gift a Trip', href: '/gift' },
+  { label: 'Destinations', href: '#' },
+  { label: 'Experiences', href: '#' },
+  { label: 'Deals', href: '#' },
+  { label: 'Gift a Trip', href: '#' },
 ];
 
 const companyLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Journal', href: '/journal' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'About Us', href: '#' },
+  { label: 'Journal', href: '#' },
+  { label: 'Careers', href: '#' },
+  { label: 'Contact', href: '#' },
 ];
 
 const supportLinks = [
-  { label: 'Help Centre', href: '/help' },
-  { label: 'Trip Changes', href: '/help/changes' },
-  { label: 'Cancellations', href: '/help/cancellations' },
-  { label: 'Trust & Safety', href: '/trust' },
+  { label: 'Help Centre', href: '#' },
+  { label: 'Trip Changes', href: '#' },
+  { label: 'Cancellations', href: '#' },
+  { label: 'Trust & Safety', href: '#' },
 ];
 
 function FooterColumn({
