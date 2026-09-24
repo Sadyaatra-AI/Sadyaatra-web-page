@@ -122,12 +122,15 @@ export default function Hero() {
                     </p>
 
                     <div className="mt-8 flex items-center gap-5">
-                        <Link
-                            href="#"
+                        <button
+                            onClick={() => {
+                                const el = document.getElementById('waitlist');
+                                el?.scrollIntoView({ behavior: 'smooth' });
+                            }}
                             className="rounded-sm bg-[#8c956a] px-7 py-4 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-[#7a8259]"
                         >
                             Explore Destinations
-                        </Link>
+                        </button>
 
                         {/* Show play/pause only when video is the current slide */}
                         {SLIDES[current].type === 'video' && (

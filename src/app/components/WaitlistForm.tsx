@@ -55,6 +55,7 @@ export default function WaitlistForm() {
     if (status === "success") {
         return (
             <motion.div
+                id="waitlist"
                 initial={{
                     opacity: 0,
                     y: 20,
@@ -127,6 +128,7 @@ export default function WaitlistForm() {
 
     return (
         <motion.form
+            id="waitlist"
             onSubmit={handleSubmit}
             initial={{
                 opacity: 0,
@@ -174,6 +176,7 @@ export default function WaitlistForm() {
                 {/* Khaki underline */}
 
                 <motion.div
+                    id="waitlist"
                     className="
                         mx-auto
                         mt-5
