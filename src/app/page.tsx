@@ -14,7 +14,7 @@ export default function Home() {
       <Features />
       <ExploreSection />
       <UserFlow />
-      <WaitlistForm />
+      <div id="waitlist"><WaitlistForm /></div>
       <Footer />
 
     </main>

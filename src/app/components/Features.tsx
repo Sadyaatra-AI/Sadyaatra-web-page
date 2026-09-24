@@ -10,7 +10,7 @@ const FEATURES = [
             'Browse each destination and view them in 360° immersive mode before actually visiting the place',
     },
     {
-        src: '/feature-2.png',
+        src: '/feature-5.png',
         title: 'Planning Section',
         description:
             'AI powered platform mastered in generating the detailed day-wise itinerary according to user preferences and budget',

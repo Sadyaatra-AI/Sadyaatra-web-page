@@ -65,12 +65,15 @@ export default function Navbar() {
                 ))}
             </ul>
 
-            <Link
-                href="/plan"
-                className="rounded-sm bg-[#8c956a] px-5 py-2.5 text-xs font-medium uppercase tracking-wider text-white hover:bg-[#7a8259] transition-colors whitespace-nowrap"
+            <button
+                onClick={() => {
+                    const el = document.getElementById('waitlist');
+                    el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="rounded-sm bg-[#8c956a] px-5 py-2.5 text-xs font-medium uppercase tracking-wider text-white hover:bg-[#7a8259] transition-colors whitespace-nowrap cursor-pointer"
             >
                 Plan My Trip
-            </Link>
+            </button>
         </nav>
     );
 }
