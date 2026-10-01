@@ -93,7 +93,7 @@ export default function Features() {
                 {/* Card 2 */}
                 <FadeIn
                     delay={0.15}
-                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#C6CAB2] p-6"
+                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#D6CFCC] p-6"
                 >
                     <img
                         src={FEATURES[1].src}
@@ -113,7 +113,7 @@ export default function Features() {
                 {/* Card 3 */}
                 <FadeIn
                     delay={0.3}
-                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#C6CAB2] p-6"
+                    className="flex flex-col justify-between overflow-hidden rounded-2xl bg-[#D6CFCC] p-6"
                 >
                     <img
                         src={FEATURES[2].src}
@@ -133,7 +133,7 @@ export default function Features() {
                 {/* Card 4 - Wide bottom card */}
                 <FadeIn
                     delay={0.45}
-                    className="flex flex-col overflow-hidden rounded-2xl bg-[#C6CAB2] md:col-span-2 md:flex-row"
+                    className="flex flex-col overflow-hidden rounded-2xl bg-[#D6CFCC] md:col-span-2 md:flex-row"
                 >
                     <img
                         src={FEATURES[3].src}
